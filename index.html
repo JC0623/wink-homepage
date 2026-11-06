@@ -48,8 +48,11 @@ input,textarea{font-family:inherit;font-size:16px}
 .ph{filter:grayscale(1);transition:filter 300ms ease}
 @media (hover:hover) and (pointer:fine){.ph:hover{filter:none}}
 .ph.on{filter:none}
+.works{white-space:nowrap}
+@media (max-width:380px){.works{font-size:10px !important}}
 .svc>li{flex:0 0 calc((100% - 64px) / 5)}
 @media (max-width:600px){.svc>li{flex-basis:calc((100% - 32px) / 3)}}
+@media (max-width:360px){.svc{column-gap:8px !important}.svc>li{flex-basis:calc((100% - 16px) / 3);min-width:0}.svc>li>span:first-child{font-size:10px !important;letter-spacing:0.08em !important;white-space:nowrap}.svc>li>span:last-child{font-size:12px !important;white-space:nowrap}}
 .rise-1{animation:rise 700ms cubic-bezier(0.23,1,0.32,1) 900ms backwards}
 .rise-2{animation:rise 700ms cubic-bezier(0.23,1,0.32,1) 980ms backwards}
 @media (prefers-reduced-motion:reduce){.mk-drop,.mk-tip,.mk-w-line,.mk-sheen,.spark-1,.spark-2,.logo,.rise-1,.rise-2{animation:none}}
@@ -99,15 +102,15 @@ input,textarea{font-family:inherit;font-size:16px}
 <div style="max-width: 720px; margin: 0 auto; padding: clamp(64px, 9vw, 112px) 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 3vw, 32px)">
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px; text-align: center">
 <img loading="lazy" decoding="async" src="images/actor-kim-yongsu.jpg" alt="배우 김용수 흑백 프로필 사진" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #EBEBEB">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif KR', serif; font-size: clamp(15px, 2vw, 18px); font-weight: 700">김용수</span><span style="font-size: 12px; color: #666666">뮤지컬</span><span style="font-size: 11px; line-height: 1.6; color: #767676">브로드웨이 42번가 · 빌리 엘리어트</span></figcaption>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif KR', serif; font-size: clamp(15px, 2vw, 18px); font-weight: 700">김용수</span><span style="font-size: 12px; color: #666666">뮤지컬</span><span class="works" style="font-size: 11px; line-height: 1.6; color: #767676">두 도시 이야기<br>비틀쥬스<br>지킬 앤 하이드<br>킹키부츠 외</span></figcaption>
 </figure>
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px; text-align: center">
 <img loading="lazy" decoding="async" src="images/actor-yang-kyungwon.jpg" alt="배우 양경원 흑백 프로필 사진" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #EBEBEB">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif KR', serif; font-size: clamp(15px, 2vw, 18px); font-weight: 700">양경원</span><span style="font-size: 12px; color: #666666">드라마 · 연극</span><span style="font-size: 11px; line-height: 1.6; color: #767676">사랑의 불시착 · 거울공주 평강이야기</span></figcaption>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif KR', serif; font-size: clamp(15px, 2vw, 18px); font-weight: 700">양경원</span><span style="font-size: 12px; color: #666666">드라마 · 연극</span><span class="works" style="font-size: 11px; line-height: 1.6; color: #767676">사랑의 불시착<br>빈센조<br>거울공주 평강이야기<br>브로드웨이 42번가 외</span></figcaption>
 </figure>
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px; text-align: center">
 <img loading="lazy" decoding="async" src="images/actor-kim-sungsu.jpg" alt="배우 김성수 흑백 프로필 사진" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #EBEBEB">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif KR', serif; font-size: clamp(15px, 2vw, 18px); font-weight: 700">김성수</span><span style="font-size: 12px; color: #666666">뮤지컬 · 연극</span><span style="font-size: 11px; line-height: 1.6; color: #767676">빌리 엘리어트 · 로기수</span></figcaption>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif KR', serif; font-size: clamp(15px, 2vw, 18px); font-weight: 700">김성수</span><span style="font-size: 12px; color: #666666">뮤지컬 · 연극</span><span class="works" style="font-size: 11px; line-height: 1.6; color: #767676">섬<br>빌리 엘리어트<br>브로드웨이 42번가<br>고스트 외</span></figcaption>
 </figure>
 </div>
 </section>
@@ -141,7 +144,7 @@ input,textarea{font-family:inherit;font-size:16px}
 </div>
 <div style="display: flex; flex-direction: column; gap: 10px">
 <p style="margin: 0; font-size: 11px; letter-spacing: 0.3em; padding-left: 0.3em; color: #6A6A6A">SELECTED STAGES</p>
-<p style="margin: 0; font-size: 13px; line-height: 2; color: #555555">삼성 하계수련대회 공연 총괄 · LS그룹 I-Fair 기획 공연 · BNP PARIBAS 행사 공연 총괄 · 현대자동차 · 기아자동차 · BMW · 신한생명 · PCA생명 · W 워커힐 · 메리어트 호텔 · 현대백화점 전국 투어 · 광복 70주년 광화문 콘서트 · 대전예술의전당 · 울산문화예술회관 · 천재교육</p>
+<p style="margin: 0; font-size: 13px; line-height: 2; color: #555555">디만트코리아(오티콘) · 삼성 하계수련대회 공연 총괄 · LS그룹 I-Fair 기획 공연 · BNP PARIBAS 행사 공연 총괄 · 현대자동차 · 기아자동차 · BMW · 신한생명 · PCA생명 · W 워커힐 · 메리어트 호텔 · 현대백화점 전국 투어 · 광복 70주년 광화문 콘서트 · 대전예술의전당 · 울산문화예술회관 · 천재교육</p>
 </div>
 </div>
 </section>
