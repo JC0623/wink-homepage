@@ -2,23 +2,221 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>wink 홈페이지 시안</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wink — 배우가 만드는 행사 · 공연</title>
+<meta name="description" content="배우 김용수·양경원·김성수가 직접 기획하고 진행하는 행사·공연. 학교, 기업, 병원, 공공기관 행사와 뮤지컬 갈라쇼, 공연 교육.">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:title" content="Wink — 배우가 만드는 행사 · 공연">
+<meta property="og:description" content="CREATIVE IDEA COMPANY WINK — 배우가 만드는 행사와 공연">
+<meta property="og:image" content="images/stage-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yellowtail&amp;family=Noto+Serif+KR:wght@400;700&amp;family=Noto+Sans+KR:wght@300;400;500&amp;display=swap">
 <style>
-body{margin:0;padding:48px 24px;font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;background:#faf9f5;color:#1f1e1d}
-main{max-width:480px;margin:0 auto}
-h1{font-size:22px;margin:0 0 24px}
-a{display:block;padding:14px 16px;margin-bottom:10px;background:#fff;border:1px solid #e5e3dc;border-radius:8px;color:inherit;text-decoration:none}
-a:hover{border-color:#1f1e1d}
-small{color:#6b6a68}
+html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
+body{margin:0;background:#FFFFFF}
+a{color:#111111}a:hover{color:#555555}
+input,textarea{font-family:inherit;font-size:16px}
+.btn{transition:transform 140ms cubic-bezier(0.23,1,0.32,1),background-color 180ms ease,color 180ms ease;touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.btn:active{transform:scale(0.97)}
+@media (hover:hover) and (pointer:fine){.btn-line:hover{background:#111111;color:#FFFFFF}.btn-solid:hover{background:#333333}}
+.field{transition:border-color 180ms ease}
+.field:focus{outline:none;border-bottom-color:#111111}
+.mk{display:block;width:clamp(120px,12vw,168px);height:auto;overflow:visible}
+.mk-ink{fill:#111111;fill-rule:evenodd}
+.mk-w-line{fill:none;stroke:#FFFFFF;stroke-width:46;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:212;stroke-dashoffset:0;animation:w-draw 560ms cubic-bezier(0.65,0,0.35,1) 560ms backwards}
+.mk-drop{transform-box:fill-box;animation:hat-drop 620ms cubic-bezier(0.34,1.45,0.64,1) 80ms backwards}
+.mk-tip{transform-box:fill-box;transform-origin:1% 85%;animation:hat-tip 1000ms cubic-bezier(0.77,0,0.175,1) 1350ms}
+.mk-sheen{transform:skewX(-20deg);animation:sheen 640ms cubic-bezier(0.65,0,0.35,1) 2350ms}
+@keyframes hat-drop{from{opacity:0;transform:translateY(-44px)}}
+@keyframes w-draw{from{stroke-dashoffset:212}}
+@keyframes hat-tip{0%,100%{transform:none}38%,62%{transform:translateY(-12px) rotate(-13deg)}}
+@keyframes hat-tip-again{0%,100%{transform:none}38%,62%{transform:translateY(-12px) rotate(-13deg)}}
+@keyframes sheen{from{transform:translateX(0) skewX(-20deg)}to{transform:translateX(560px) skewX(-20deg)}}
+@keyframes sheen-again{from{transform:translateX(0) skewX(-20deg)}to{transform:translateX(560px) skewX(-20deg)}}
+@media (hover:hover) and (pointer:fine){.mk:hover .mk-tip{animation:hat-tip-again 900ms cubic-bezier(0.77,0,0.175,1)}.mk:hover .mk-sheen{animation:sheen-again 560ms cubic-bezier(0.65,0,0.35,1) 700ms}}
+.spark{position:absolute;display:block;opacity:0;pointer-events:none}
+.spark svg{display:block;width:100%;height:auto;fill:var(--ink)}
+.spark-1{left:79%;top:-8%;width:15%;animation:twinkle 640ms cubic-bezier(0.23,1,0.32,1) 2600ms}
+.spark-2{right:clamp(-16px,-1.1vw,-8px);top:-2px;width:clamp(16px,1.8vw,24px);animation:twinkle 640ms cubic-bezier(0.23,1,0.32,1) 3050ms}
+@keyframes twinkle{0%{opacity:0;transform:scale(0.3) rotate(-45deg)}45%{opacity:1;transform:scale(1) rotate(0deg)}100%{opacity:0;transform:scale(0.6) rotate(30deg)}}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}}
+@keyframes rise-tilt{from{opacity:0;transform:translateY(10px) rotate(-4deg)}}
+@keyframes wink-sheen{from{background-position:100% 0}to{background-position:0% 0}}
+.logo{animation:rise-tilt 700ms cubic-bezier(0.23,1,0.32,1) 760ms backwards,wink-sheen 640ms cubic-bezier(0.65,0,0.35,1) 2350ms}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){.logo{background-image:linear-gradient(100deg,var(--ink) 0%,var(--ink) 42%,#FFE9EC 50%,var(--ink) 58%,var(--ink) 100%);background-size:250% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding:0.1em 0.18em 0.2em;margin:-0.1em -0.18em -0.2em}}
+.ph{filter:grayscale(1);transition:filter 300ms ease}
+@media (hover:hover) and (pointer:fine){.ph:hover{filter:none}}
+.rise-1{animation:rise 700ms cubic-bezier(0.23,1,0.32,1) 900ms backwards}
+.rise-2{animation:rise 700ms cubic-bezier(0.23,1,0.32,1) 980ms backwards}
+@media (prefers-reduced-motion:reduce){.mk-drop,.mk-tip,.mk-w-line,.mk-sheen,.spark-1,.spark-2,.logo,.rise-1,.rise-2{animation:none}}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.btn:disabled{opacity:0.6;cursor:default}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:10;box-sizing:border-box;width:max-content;max-width:calc(100vw - 32px);padding:14px 18px;background:#FFFFFF;border:1px solid #E6E6E6;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.08);font-size:13px;color:#111111;opacity:0;transform:translate(-50%,16px);pointer-events:none;transition:opacity 220ms ease,transform 400ms cubic-bezier(0.23,1,0.32,1)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.toast{transition:opacity 220ms ease;transform:translate(-50%,0)}}
 </style>
 </head>
 <body>
-<main>
-<h1>wink 홈페이지 시안</h1>
-<a href="1.html">1안 — 상세형</a>
-<a href="2.html">2안 — 미니멀형 (브로드웨이 네온)</a>
-<a href="3.html">3안 — 미니멀형 (화이트)</a>
-</main>
+<div style="width: 100%; background: #FFFFFF; color: #111111; font-family: 'Noto Sans KR', system-ui, sans-serif; font-size: 15px; line-height: 1.7; --ink: #C8102E">
+
+<!-- Hero: the card face, one screen -->
+<section id="top" style="min-height: min(100svh, 860px); box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(28px, 4vw, 40px); padding: 64px 24px; text-align: center">
+<div style="display: flex; flex-direction: column; align-items: center; gap: clamp(8px, 1.2vw, 16px)">
+<div style="position: relative">
+<svg class="mk" viewBox="0 0 286 288" role="img" aria-label="wink 로고 — 모자를 쓴 W">
+<defs>
+<mask id="wink-w-mask"><path class="mk-w-line" d="M62 236 L102 270 L143 236 L184 270 L224 236"></path></mask>
+<linearGradient id="wink-sheen-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color: #FFFFFF; stop-opacity: 0"></stop><stop offset="0.5" style="stop-color: #FFFFFF; stop-opacity: 0.85"></stop><stop offset="1" style="stop-color: #FFFFFF; stop-opacity: 0"></stop></linearGradient>
+<clipPath id="wink-mk-clip"><path style="clip-rule: evenodd" d="M119.0 151.0C99.2 150.3 95.8 150.0 74.5 147.4C51.7 144.6 21.7 137.4 11.8 132.4C3.7 128.3 -0.2 120.6 2.3 113.8C5.8 104.1 13.6 100.5 23.8 103.9C28.6 105.5 34.2 107.2 46.2 110.6C47.7 111.0 47.9 107.9 48.2 70.8C48.5 32.2 48.7 30.3 50.7 25.1C55.3 13.8 63.0 6.0 73.5 2.1C78.9 0.1 80.8 -0.0 143.0 -0.0C205.3 -0.0 207.1 0.1 212.5 2.1C222.9 6.0 230.8 13.8 235.2 24.7C237.5 30.4 237.5 30.9 237.5 70.2C237.5 92.0 237.8 110.1 238.1 110.4C238.6 111.0 251.2 107.6 262.1 104.0C269.5 101.5 273.9 102.2 279.2 107.0C283.0 110.4 283.4 111.1 283.8 116.6C284.1 121.5 283.8 123.1 281.8 126.0C278.9 130.4 271.5 134.2 258.0 138.0C222.3 148.3 174.0 152.8 119.0 151.0ZM191.0 118.0C210.8 115.4 216.1 113.9 219.4 109.9C224.0 104.4 224.0 99.6 219.4 94.1C215.8 89.8 212.0 89.4 196.3 91.9C165.3 96.9 118.4 96.9 90.0 92.0C72.5 89.0 69.6 89.4 65.3 95.9C62.5 100.1 62.4 104.5 65.0 108.8C68.0 113.6 74.4 115.5 98.0 118.4C116.0 120.7 119.6 120.8 149.0 120.5C168.9 120.2 179.3 119.6 191.0 118.0Z"></path><path d="M98.3 285.3C96.1 284.9 93.7 282.4 72.5 258.5C58.3 242.5 57.3 240.4 60.5 233.6C63.5 227.4 71.3 225.1 76.3 229.0C78.2 230.5 94.4 248.3 102.0 257.3C102.3 257.7 110.3 250.8 119.6 241.9C137.8 224.5 141.2 222.3 146.3 223.9C148.2 224.6 156.7 231.9 166.9 241.5C176.5 250.6 184.7 257.7 185.0 257.3C192.6 248.3 208.8 230.5 210.7 229.0C217.3 223.8 228.0 230.1 228.0 239.2C228.0 243.3 226.2 245.5 197.9 277.1C190.3 285.7 187.3 287.0 181.3 284.5C177.5 282.9 175.5 281.2 155.9 262.9L143.3 251.1L139.9 254.6C131.4 263.5 109.5 282.7 106.2 284.2C102.4 286.0 102.1 286.0 98.3 285.3Z"></path></clipPath>
+</defs>
+<g class="mk-drop"><g class="mk-tip"><path class="mk-ink" d="M119.0 151.0C99.2 150.3 95.8 150.0 74.5 147.4C51.7 144.6 21.7 137.4 11.8 132.4C3.7 128.3 -0.2 120.6 2.3 113.8C5.8 104.1 13.6 100.5 23.8 103.9C28.6 105.5 34.2 107.2 46.2 110.6C47.7 111.0 47.9 107.9 48.2 70.8C48.5 32.2 48.7 30.3 50.7 25.1C55.3 13.8 63.0 6.0 73.5 2.1C78.9 0.1 80.8 -0.0 143.0 -0.0C205.3 -0.0 207.1 0.1 212.5 2.1C222.9 6.0 230.8 13.8 235.2 24.7C237.5 30.4 237.5 30.9 237.5 70.2C237.5 92.0 237.8 110.1 238.1 110.4C238.6 111.0 251.2 107.6 262.1 104.0C269.5 101.5 273.9 102.2 279.2 107.0C283.0 110.4 283.4 111.1 283.8 116.6C284.1 121.5 283.8 123.1 281.8 126.0C278.9 130.4 271.5 134.2 258.0 138.0C222.3 148.3 174.0 152.8 119.0 151.0ZM191.0 118.0C210.8 115.4 216.1 113.9 219.4 109.9C224.0 104.4 224.0 99.6 219.4 94.1C215.8 89.8 212.0 89.4 196.3 91.9C165.3 96.9 118.4 96.9 90.0 92.0C72.5 89.0 69.6 89.4 65.3 95.9C62.5 100.1 62.4 104.5 65.0 108.8C68.0 113.6 74.4 115.5 98.0 118.4C116.0 120.7 119.6 120.8 149.0 120.5C168.9 120.2 179.3 119.6 191.0 118.0Z"></path></g></g>
+<path class="mk-ink" mask="url(#wink-w-mask)" d="M98.3 285.3C96.1 284.9 93.7 282.4 72.5 258.5C58.3 242.5 57.3 240.4 60.5 233.6C63.5 227.4 71.3 225.1 76.3 229.0C78.2 230.5 94.4 248.3 102.0 257.3C102.3 257.7 110.3 250.8 119.6 241.9C137.8 224.5 141.2 222.3 146.3 223.9C148.2 224.6 156.7 231.9 166.9 241.5C176.5 250.6 184.7 257.7 185.0 257.3C192.6 248.3 208.8 230.5 210.7 229.0C217.3 223.8 228.0 230.1 228.0 239.2C228.0 243.3 226.2 245.5 197.9 277.1C190.3 285.7 187.3 287.0 181.3 284.5C177.5 282.9 175.5 281.2 155.9 262.9L143.3 251.1L139.9 254.6C131.4 263.5 109.5 282.7 106.2 284.2C102.4 286.0 102.1 286.0 98.3 285.3Z"></path>
+<g style="clip-path: url(#wink-mk-clip)"><rect class="mk-sheen" x="-150" y="-20" width="90" height="330" style="fill: url(#wink-sheen-grad)"></rect></g>
+</svg></div>
+<div style="position: relative">
+<h1 class="logo" style="margin: 0; font-family: 'Yellowtail', cursive; font-weight: 400; font-size: clamp(64px, 8vw, 112px); line-height: 1; color: #C8102E; transform: rotate(-4deg)">Wink</h1></div>
+</div>
+<div class="rise-1" style="display: flex; flex-direction: column; align-items: center; gap: 14px">
+<p style="margin: 0; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: clamp(13px, 1.6vw, 18px); letter-spacing: 0.3em; padding-left: 0.3em; color: #111111">CREATIVE IDEA COMPANY</p>
+<div style="width: 40px; height: 1px; background: #BDBDBD"></div>
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.25em; padding-left: 0.25em; color: #555555">김용수 · 양경원 · 김성수</p>
+</div>
+<a class="btn btn-line rise-2" href="#contact" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 28px; border: 1px solid #111111; text-decoration: none; font-size: 13px; letter-spacing: 0.25em; padding-left: calc(28px + 0.25em)">CONTACT</a>
+</section>
+
+<!-- Message -->
+<section>
+<div style="max-width: 720px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) 24px 0; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center"><p style="margin: 0; font-family: 'Noto Serif KR', serif; font-weight: 400; font-size: clamp(17px, 2.2vw, 24px); line-height: 1.8; color: #111111">우리의 이야기는 <span style="color: #C8102E">공감</span>하고 <span style="color: #C8102E">감동</span>되며,<br>우리로 하여금 <span style="color: #C8102E">영향</span>을 주어야 한다.</p>
+</div>
+</section>
+
+<!-- Three actors: small, quiet -->
+<section>
+<div style="max-width: 720px; margin: 0 auto; padding: clamp(64px, 9vw, 112px) 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 3vw, 32px)">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px; text-align: center">
+<img loading="lazy" decoding="async" src="images/actor-kim-yongsu.jpg" alt="배우 김용수 흑백 프로필 사진" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #EBEBEB">
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif KR', serif; font-size: clamp(15px, 2vw, 18px); font-weight: 700">김용수</span><span style="font-size: 12px; color: #666666">뮤지컬</span><span style="font-size: 11px; line-height: 1.6; color: #767676">브로드웨이 42번가 · 빌리 엘리어트</span></figcaption>
+</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px; text-align: center">
+<img loading="lazy" decoding="async" src="images/actor-yang-kyungwon.jpg" alt="배우 양경원 흑백 프로필 사진" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #EBEBEB">
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif KR', serif; font-size: clamp(15px, 2vw, 18px); font-weight: 700">양경원</span><span style="font-size: 12px; color: #666666">드라마 · 연극</span><span style="font-size: 11px; line-height: 1.6; color: #767676">사랑의 불시착 · 거울공주 평강이야기</span></figcaption>
+</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px; text-align: center">
+<img loading="lazy" decoding="async" src="images/actor-kim-sungsu.jpg" alt="배우 김성수 흑백 프로필 사진" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #EBEBEB">
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Noto Serif KR', serif; font-size: clamp(15px, 2vw, 18px); font-weight: 700">김성수</span><span style="font-size: 12px; color: #666666">뮤지컬 · 연극</span><span style="font-size: 11px; line-height: 1.6; color: #767676">빌리 엘리어트 · 로기수</span></figcaption>
+</figure>
+</div>
+</section>
+
+<!-- Service -->
+<section>
+<div style="max-width: 880px; margin: 0 auto; padding: 0 24px clamp(72px, 10vw, 128px); display: flex; flex-direction: column; align-items: center; gap: 32px; text-align: center">
+<h2 style="margin: 0; font-family: 'Yellowtail', cursive; font-weight: 400; font-size: clamp(36px, 4vw, 44px); line-height: 1.2; color: #C8102E">Service</h2>
+<ul style="margin: 0; padding: 0; list-style: none; width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 24px 16px">
+<li style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; letter-spacing: 0.2em; font-weight: 500; color: #111111">EVENT</span><span style="font-size: 13px; color: #555555">행사 맞춤 공연</span></li>
+<li style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; letter-spacing: 0.2em; font-weight: 500; color: #111111">GALA SHOW</span><span style="font-size: 13px; color: #555555">뮤지컬 갈라쇼</span></li>
+<li style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; letter-spacing: 0.2em; font-weight: 500; color: #111111">EDUCATION</span><span style="font-size: 13px; color: #555555">공연 체험 교육</span></li>
+<li style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; letter-spacing: 0.2em; font-weight: 500; color: #111111">PRODUCTION</span><span style="font-size: 13px; color: #555555">공연 기획 · 제작</span></li>
+<li style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; letter-spacing: 0.2em; font-weight: 500; color: #111111">AGENCY</span><span style="font-size: 13px; color: #555555">배우 에이전시</span></li>
+</ul>
+<p style="margin: 0; font-size: 12px; letter-spacing: 0.25em; padding-left: 0.25em; color: #666666">학교 · 기업 · 병원 · 공공기관</p>
+</div>
+</section>
+
+<!-- Works: stage photos + selected stages -->
+<section>
+<div style="max-width: 600px; margin: 0 auto; padding: 0 24px clamp(72px, 10vw, 128px); display: flex; flex-direction: column; align-items: center; gap: 28px; text-align: center">
+<h2 style="margin: 0; font-family: 'Yellowtail', cursive; font-weight: 400; font-size: clamp(36px, 4vw, 44px); line-height: 1.2; color: #C8102E">Works</h2>
+<div style="width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px">
+<img loading="lazy" decoding="async" class="ph" src="images/stage-1.jpg" alt="조명 아래 노래하는 세 배우" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #EBEBEB">
+<img loading="lazy" decoding="async" class="ph" src="images/stage-2.jpg" alt="갑옷과 모자 분장을 한 두 배우의 극 장면" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #EBEBEB">
+<img loading="lazy" decoding="async" class="ph" src="images/stage-3.jpg" alt="어두운 무대 위 앙상블 댄스" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #EBEBEB">
+<img loading="lazy" decoding="async" class="ph" src="images/stage-4.jpg" alt="화려한 세트의 대형 갈라쇼 무대" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #EBEBEB">
+<img loading="lazy" decoding="async" class="ph" src="images/stage-5.jpg" alt="무대 위에서 점프하는 퍼포머들" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #EBEBEB">
+<img loading="lazy" decoding="async" class="ph" src="images/stage-6.jpg" alt="스포트라이트 아래의 콘서트 무대" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #EBEBEB">
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-size: 11px; letter-spacing: 0.3em; padding-left: 0.3em; color: #6A6A6A">SELECTED STAGES</p>
+<p style="margin: 0; font-size: 13px; line-height: 2; color: #555555">삼성 하계수련대회 공연 총괄 · LS그룹 I-Fair 기획 공연 · BNP PARIBAS 행사 공연 총괄 · 현대자동차 · 기아자동차 · BMW · 신한생명 · PCA생명 · W 워커힐 · 메리어트 호텔 · 현대백화점 전국 투어 · 광복 70주년 광화문 콘서트 · 대전예술의전당 · 울산문화예술회관 · 천재교육</p>
+</div>
+</div>
+</section>
+
+<!-- Contact: the back of the card -->
+<section id="contact" style="background: #F5F5F5">
+<div style="max-width: 480px; margin: 0 auto; padding: clamp(72px, 10vw, 112px) 24px; display: flex; flex-direction: column; gap: 28px">
+<h2 style="margin: 0; text-align: center; font-family: 'Yellowtail', cursive; font-weight: 400; font-size: clamp(36px, 4vw, 44px); line-height: 1.2; color: #C8102E">Contact</h2>
+<p style="margin: -12px 0 0; text-align: center; font-size: 13px; color: #555555">문의 및 안내 · 양경원 <a href="tel:01068868045" style="color: #111111; text-decoration: none; font-weight: 500">010-6886-8045</a></p>
+<form id="contact-form" style="display: flex; flex-direction: column; gap: 20px">
+<label class="hp" aria-hidden="true">website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; letter-spacing: 0.05em; color: #555555">기관 · 성함
+<input class="field" type="text" name="name" required autocomplete="organization" enterkeyhint="next" style="min-height: 48px; padding: 0 2px; background: transparent; border: 0; border-bottom: 1px solid #BDBDBD; border-radius: 0; color: #111111">
+</label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; letter-spacing: 0.05em; color: #555555">연락처
+<input class="field" type="tel" name="phone" required inputmode="tel" autocomplete="tel" enterkeyhint="next" style="min-height: 48px; padding: 0 2px; background: transparent; border: 0; border-bottom: 1px solid #BDBDBD; border-radius: 0; color: #111111">
+</label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; letter-spacing: 0.05em; color: #555555">행사 일정 · 내용
+<textarea class="field" name="message" rows="3" enterkeyhint="send" style="padding: 12px 2px; background: transparent; border: 0; border-bottom: 1px solid #BDBDBD; border-radius: 0; color: #111111; resize: vertical"></textarea>
+</label>
+<label style="display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 13px; color: #555555">
+<input type="checkbox" name="agree" required style="width: 20px; height: 20px; margin: 0; accent-color: #111111">
+개인정보 수집·이용 동의 <a href="#privacy">보기</a>
+</label>
+<button class="btn btn-solid" type="submit" style="min-height: 52px; background: #111111; border: 0; color: #FFFFFF; font-size: 13px; letter-spacing: 0.3em; font-family: inherit; cursor: pointer">SEND</button>
+</form>
+</div>
+</section>
+
+<footer style="background: #F5F5F5">
+<div style="max-width: 880px; margin: 0 auto; padding: 0 24px 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 20px; font-size: 12px; color: #6A6A6A; text-align: center">
+<span>크리에이티브 아이디어 컴퍼니 윙크 · 사업자등록번호 [000-00-00000]</span>
+<span>© 2026 Wink</span>
+</div>
+</footer>
+
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+// Google Apps Script 웹 앱 URL (apps-script/Code.gs 배포 후 …/exec 주소를 넣는다)
+var CONTACT_ENDPOINT = '';
+
+(function () {
+  var form = document.getElementById('contact-form');
+  var toast = document.getElementById('toast');
+  var button = form.querySelector('button[type="submit"]');
+  var timer;
+
+  function notify(msg) {
+    toast.textContent = msg;
+    toast.classList.add('on');
+    clearTimeout(timer);
+    timer = setTimeout(function () { toast.classList.remove('on'); }, 3200);
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!CONTACT_ENDPOINT) {
+      notify('문의 접수 준비 중입니다. 010-6886-8045로 연락 부탁드립니다.');
+      return;
+    }
+    button.disabled = true;
+    button.textContent = 'SENDING';
+    // Apps Script does not send CORS headers, so the reply is opaque: a resolved request counts as sent.
+    fetch(CONTACT_ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) })
+      .then(function () {
+        form.reset();
+        notify('문의가 접수되었습니다. 곧 연락드리겠습니다.');
+      })
+      .catch(function () {
+        notify('전송하지 못했습니다. 잠시 후 다시 시도하거나 전화로 문의해 주세요.');
+      })
+      .then(function () {
+        button.disabled = false;
+        button.textContent = 'SEND';
+      });
+  });
+})();
+</script>
 </body>
 </html>
