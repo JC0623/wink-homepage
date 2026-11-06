@@ -47,6 +47,9 @@ input,textarea{font-family:inherit;font-size:16px}
 @supports ((-webkit-background-clip:text) or (background-clip:text)){.logo{background-image:linear-gradient(100deg,var(--ink) 0%,var(--ink) 42%,#FFE9EC 50%,var(--ink) 58%,var(--ink) 100%);background-size:250% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding:0.1em 0.18em 0.2em;margin:-0.1em -0.18em -0.2em}}
 .ph{filter:grayscale(1);transition:filter 300ms ease}
 @media (hover:hover) and (pointer:fine){.ph:hover{filter:none}}
+.ph.on{filter:none}
+.svc>li{flex:0 0 calc((100% - 64px) / 5)}
+@media (max-width:600px){.svc>li{flex-basis:calc((100% - 32px) / 3)}}
 .rise-1{animation:rise 700ms cubic-bezier(0.23,1,0.32,1) 900ms backwards}
 .rise-2{animation:rise 700ms cubic-bezier(0.23,1,0.32,1) 980ms backwards}
 @media (prefers-reduced-motion:reduce){.mk-drop,.mk-tip,.mk-w-line,.mk-sheen,.spark-1,.spark-2,.logo,.rise-1,.rise-2{animation:none}}
@@ -113,7 +116,7 @@ input,textarea{font-family:inherit;font-size:16px}
 <section>
 <div style="max-width: 880px; margin: 0 auto; padding: 0 24px clamp(72px, 10vw, 128px); display: flex; flex-direction: column; align-items: center; gap: 32px; text-align: center">
 <h2 style="margin: 0; font-family: 'Yellowtail', cursive; font-weight: 400; font-size: clamp(36px, 4vw, 44px); line-height: 1.2; color: #C8102E">Service</h2>
-<ul style="margin: 0; padding: 0; list-style: none; width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 24px 16px">
+<ul class="svc" style="margin: 0; padding: 0; list-style: none; width: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px 16px">
 <li style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; letter-spacing: 0.2em; font-weight: 500; color: #111111">EVENT</span><span style="font-size: 13px; color: #555555">행사 맞춤 공연</span></li>
 <li style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; letter-spacing: 0.2em; font-weight: 500; color: #111111">GALA SHOW</span><span style="font-size: 13px; color: #555555">뮤지컬 갈라쇼</span></li>
 <li style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; letter-spacing: 0.2em; font-weight: 500; color: #111111">EDUCATION</span><span style="font-size: 13px; color: #555555">공연 체험 교육</span></li>
@@ -181,6 +184,11 @@ input,textarea{font-family:inherit;font-size:16px}
 <script>
 // Google Apps Script 웹 앱 URL (apps-script/Code.gs 배포 후 …/exec 주소를 넣는다)
 var CONTACT_ENDPOINT = '';
+
+// Phones have no hover: a tap shows a stage photo in colour, another tap returns it to black and white.
+document.querySelectorAll('.ph').forEach(function (img) {
+  img.addEventListener('click', function () { img.classList.toggle('on'); });
+});
 
 (function () {
   var form = document.getElementById('contact-form');
